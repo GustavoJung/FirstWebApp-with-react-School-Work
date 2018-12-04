@@ -7,19 +7,187 @@
   height: 40vmin;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.slider{
+    width: 100%;
+    height: 400px;
+    background: url("robo.jpg");
+    background-size: 80%;
+    background-position: right;
+    animation: slide 30s infinite;
+}
+@keyframes slide {
+25%{
+    background: url("robo.jpg");
+    background-size: 80%;
+    background-position: right;
+} 50%{
+      background: url("robo3.jpg");
+      background-size: 80%;
+      background-position: right;
+  }
+    75%{
+        background: url("robo2.png");
+        background-size: 80%;
+        background-position: right;
+
+    }
+    100%{
+        background: url("robo.jpg");
+        background-size: 80%;
+        background-position: right;
+
+    }
+}
+
+.container {
+  margin-top: 15px;
+  margin-left: 22%;
+    width:78%;
+  padding: 16px;
+  border: 2px solid forestgreen;
+}
+
+#App-header{
+  margin-left: 22%;
+}
+
+.custom-select{
+  position: relative;
+  display: inline-block;
+}
+.conteudo{
+  display: none;
+  position: absolute;
+  background-color: forestgreen;
+  min-width: 160px;
+  padding: 12px 16px;
+  z-index: 0;
+  right:0;
+}
+.custom-select:hover .conteudo{
+  display: block;
+}
+.conteudo a{
+  color:black;
+  padding:12px 16px;
+  display: block;
+}
+
+input[type=text]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #F1F1F1;
+}
+
+input[type=text]:focus{
+  background-color:#ddd;
+  outline: none;
+}
+
+.registerBt{
+  background-color: #4CAF50;
+  color:white;
+  padding: 16px 20px;
+  margin:8px 0;
+  border:none;
+  currsor:pointer;
+  width:100%;
+  opacity: 0.9;
+}
+
+.registerBt:hover{
+  opacity:1;
+}
+
+ul{
+list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:forestgreen ;
+}
+
+li{
+  float:left;
+}
+
+li a{
+  color: black;
+  text-align:center;
+  padding: 20px 20px;
+  }
+
+li a:hover{
+  background-color: #4CAF50;
+}
+
+.navBar{
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: forestgreen;
+  overflow-x:hidden;
+  padding-top:30px;
+  transition: 0.5s;
+  font-size: 30px;
+}
+
+.navBar a{
+  padding: 8px 10px 10px 10px;
+  text-decoration: none;
+  font-size:20px;
+  color: #FFFF;
+  display: block;
+  transition: 0.3s;
+
+}
+#novaRodada{
+    width: 78%;
+    height: 500px;
+    background: forestgreen;
+}
+#novaRodadaInside{
+    width:100%;
+    height:100%;
+    border: 2px solid white;
+}
+
+#novaRodadaInside h1{
+    color: white;
+}
+.navBar a:hover{
+  color:black;
+  background-color:darkgreen ;
+}
+
+.list_competicoes{
+  background-color:#F1F1F1;
+  color: black;
+  padding: 16px;
+  font-size:16px;
+  border: none;
+  cursor: pointer;
+}
+
+.list_competicoes:hover, .list_competicoes:focus{
+    background-color:forestgreen ;
 }
 
 .App-link {
   color: #61dafb;
+}
+#id {
+    display: none;
+    background:#efefef;
+    border:1px solid black;
+    width: 50%;
+    height: 200px;
 }
 
 @keyframes App-logo-spin {

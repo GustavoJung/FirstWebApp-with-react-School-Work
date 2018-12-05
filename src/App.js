@@ -216,6 +216,7 @@ class App extends Component {
                         </div>
                     </form>
                 </section>
+
                 <div id="novaRodada" className="container" hidden={true}>
                     <div id="novaRodadaInside">
                         <h1>Nova Rodada</h1>
@@ -227,11 +228,16 @@ class App extends Component {
 
                     </div>
                 </div>
-            </div>
+
+                <div id="id_resultados"  className="container">
+                    <h1>RESULTADOS</h1>
+                </div>
+                 </div>
+
+
         );
     }
 }
-getTemporadas();
     function handleSaveTemporada() {
         const form = new FormData(document.getElementById("form_temporada"));
         console.log(form.toString() + " temporada");
@@ -460,31 +466,29 @@ getTemporadas();
     }
 }
 
-function getCompeticoes() {
-
-}
-
-    function getTemporadas() {
+function getCompeticoes() {}
+function getTemporadas() {
         var list = document.getElementById("listaTemporadas");
         let nome = null;
         var select = document.getElementById("comboBox");
 try{
-        fetch('http://127.0.0.1:8080/competicoes', {
+        fetch('http://127.0.0.1:8080/competicoes/all', {
             method: 'get',
             headers: {
                 "Accept": "Application/json",
                 "Content-type": "application/json;charset=utf-8"
             },
-        }).then((result){
-        console.log(result.json());
-    }
-        });
+        }).then((result => {
+            console.log(result.json());
+        }));
+
         console.log("fetch");
     }catch(ex){
     console.log("falhou");
-}
+    }
 }
 function handleRodada(){
     document.getElementById("novaRodada").hidden=false;
 }
+
 export default App;
